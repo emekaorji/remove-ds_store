@@ -1,10 +1,10 @@
 {
-    "name": "vscode-extension-boilerplate",
-    "displayName": "VSCode extension boilerplate",
+    "name": "remove-ds_store",
+    "displayName": "Delete DS_Store Files",
     "version": "0.0.1",
     "preview": true,
-    "description": "An awesome boilerplate for VSCode extension development",
-    "publisher": "YuTengjing",
+    "description": "A VSCode extension to recursively remove all .DS_Store files from the CWD.",
+    "publisher": "emekaorji",
     "icon": "images/logo.png",
     "license": "SEE LICENSE IN LICENSE",
     "main": "dist/extension.js",
@@ -21,52 +21,54 @@
         "prepare": "husky install"
     },
     "author": {
-        "name": "YuTengjing",
-        "url": "https://github.com/tjx666",
-        "email": "ytj2713151713@gmail.com"
+        "name": "Emeka Orji",
+        "url": "https://github.com/emekaorji",
+        "email": "emekapraiseo@gmail.com"
     },
     "badges": [
         {
             "url": "https://img.shields.io/badge/License-MIT-brightgreen.svg",
             "description": "License: MIT",
-            "href": "https://github.com/tjx666/vscode-extension-boilerplate/blob/master/LICENSE"
+            "href": "https://github.com/emekaorji/remove-ds_store/blob/master/LICENSE"
         },
         {
             "url": "https://img.shields.io/badge/PRs-welcome-brightgreen.svg",
             "description": "PRs Welcome",
-            "href": "https://github.com/tjx666/vscode-extension-boilerplate"
+            "href": "https://github.com/emekaorji/remove-ds_store"
         }
     ],
-    "homepage": "https://github.com/tjx666/vscode-extension-boilerplate/blob/master/README.md",
+    "homepage": "https://github.com/emekaorji/remove-ds_store/blob/master/README.md",
     "bugs": {
-        "url": "https://github.com/tjx666/vscode-extension-boilerplate/issues",
-        "email": "ytj2713151713@gmail.com"
+        "url": "https://github.com/emekaorji/remove-ds_store/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/tjx666/vscode-extension-boilerplate"
+        "url": "https://github.com/emekaorji/remove-ds_store"
     },
     "engines": {
         "vscode": "^1.73.0",
         "node": "^16.8.1"
     },
     "categories": [
+        "Formatters",
         "Other"
     ],
     "keywords": [
         "vscode",
         "vscode-extension",
-        "vscode-extension-boilerplate",
-        "boilerplate"
+        ".DS_Store",
+        "Cache",
+        "Logs",
+        "Clean up"
     ],
     "activationEvents": [
-        "onCommand:VSCodeExtensionBoilerplate.helloVSCode"
+        "onCommand:remove_ds_store.remove_DS_Store"
     ],
     "contributes": {
         "commands": [
             {
-                "command": "VSCodeExtensionBoilerplate.helloVSCode",
-                "title": "Hello Visual Studio Code!"
+                "command": "remove_ds_store.remove_DS_Store",
+                "title": "Delete .DS_Store Files"
             }
         ]
     },
