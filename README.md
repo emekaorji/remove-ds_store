@@ -1,4 +1,4 @@
-# Speed Test VSCode Extension
+# Delete DS_Store Files
 
 [![GitHub](https://img.shields.io/github/license/emekaorji/remove-ds_store)](https://github.com/emekaorji/remove-ds_store/blob/master/LICENSE) [![Known Vulnerabilities](https://snyk.io/test/github/emekaorji/remove-ds_store/badge.svg?targetFile=package.json)](https://snyk.io/test/github/emekaorji/remove-ds_store?targetFile=package.json) [![Percentage of issues still open](https://isitmaintained.com/badge/open/emekaorji/remove-ds_store.svg)](http://isitmaintained.com/project/emekaorji/remove-ds_store') [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
