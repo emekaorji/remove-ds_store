@@ -1,7 +1,7 @@
 {
     "name": "remove-ds-store",
     "displayName": "Delete DS_Store Files",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "preview": true,
     "description": "A VSCode extension to recursively remove all .DS_Store files from the CWD.",
     "publisher": "coderabbi",
