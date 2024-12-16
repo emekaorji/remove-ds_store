@@ -36,6 +36,7 @@ async function autoDeleteDSStoreFiles(uri: vscode.Uri) {
     if (autoDeleteEnabled) {
         try {
             await execPromise(`rm "${uri.fsPath}"`);
+            vscode.window.showInformationMessage(`Auto-deleted .DS_Store file, You're Welcome!`);
         } catch (error) {
             vscode.window.showErrorMessage(`Error: ${(error as Error).message}`);
         }

@@ -62,7 +62,8 @@
         "Clean up"
     ],
     "activationEvents": [
-        "onCommand:remove_ds_store.remove_DS_Store"
+        "onCommand:remove_ds_store.remove_DS_Store",
+        "onStartupFinished"
     ],
     "contributes": {
         "commands": [
