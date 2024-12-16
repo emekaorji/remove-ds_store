@@ -2,6 +2,8 @@ import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
 import * as vscode from 'vscode';
 
+import { validateDSStoreFile } from './utils';
+
 const execPromise = promisify(exec);
 
 async function deleteDSStoreFiles() {
@@ -29,12 +31,36 @@ async function deleteDSStoreFiles() {
     }
 }
 
+async function autoDeleteDSStoreFiles(uri: vscode.Uri) {
+    const config = vscode.workspace.getConfiguration('remove_ds_store');
+    const autoDeleteEnabled = config.get<boolean>('autoDelete', false);
+
+    if (autoDeleteEnabled) {
+        try {
+            const isValid = await validateDSStoreFile(uri.fsPath);
+            if (!isValid) {
+                return;
+            }
+
+            await execPromise(`rm "${uri.fsPath}"`);
+            vscode.window.showInformationMessage(`Auto-deleted .DS_Store file, You're Welcome!`);
+        } catch (error) {
+            vscode.window.showErrorMessage(`Error: ${(error as Error).message}`);
+        }
+    }
+}
+
 export function activate(context: vscode.ExtensionContext) {
     const disposable = vscode.commands.registerCommand('remove_ds_store.remove_DS_Store', () => {
         deleteDSStoreFiles();
     });
 
-    context.subscriptions.push(disposable);
+    // Track .DS_Store
+    const tracker = vscode.workspace.createFileSystemWatcher('**/.DS_Store', false, false, false);
+
+    const listener = tracker.onDidCreate(autoDeleteDSStoreFiles);
+
+    context.subscriptions.push(disposable, tracker, listener);
 }
 
 export function deactivate() {

@@ -17,9 +17,20 @@ A VSCode extension to recursively remove all .DS_Store files from the CWD.
 
 ### Usage 🛠️
 
-1. Open a new project on VSCode and trigger the command palette using `Cmd+Shift+P`.
-1. Search for "Delete .DS_Store Files" and click. All `.DS_Store` files in your current workspace will be deleted.
-1. In case of any errors or issues, appropriate error messages will be displayed, indicating the problem encountered. Refer to the #Troubleshooting section of this docs and try to fix the issue.
+1. **Manual Deletion:**
+
+   - Open a new project on VSCode and trigger the command palette using `Cmd+Shift+P`.
+   - Search for `Delete .DS_Store Files" and click`
+   - Now all `.DS_Store` files in your current workspace will be deleted.
+
+2. **Auto Deletion:**
+   - Open VSCode Settings (`Cmd + ,` on Mac, `Ctrl + ,` on Windows)
+   - Search for "DS_Store";
+   - Enable `Auto delete .DS_Store files once they appear`
+   - Now `.DS_Store` files will be deleted automatically as they appear
+
+> [!NOTE]
+> Auto-delete is disabled by default. Enable it in the `VSCode` settings if you want to delete `.DS_Store` files once they appear.
 
 ### Extension Deactivation 😔
 
