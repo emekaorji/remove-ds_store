@@ -29,6 +29,9 @@ A VSCode extension to recursively remove all .DS_Store files from the CWD.
    - Enable `Auto delete .DS_Store files once they appear`
    - Now `.DS_Store` files will be deleted automatically as they appear
 
+> [!NOTE]
+> Auto-delete is disabled by default. Enable it in the `VSCode` settings if you want to delete `.DS_Store` files once they appear.
+
 ### Extension Deactivation 😔
 
 The extension is deactivated automatically when you close Visual Studio Code or manually disable the extension in the Extensions view.
