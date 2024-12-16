@@ -67,10 +67,20 @@
     "contributes": {
         "commands": [
             {
-                "command": "remove_ds_store.remove_DS_Store",
-                "title": "Delete .DS_Store Files"
+                "title": "Delete .DS_Store Files",
+                "command": "remove_ds_store.remove_DS_Store"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Auto Delete DS_Store Files",
+            "properties": {
+                "remove_ds_store.autoDelete": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Auto delete .DS_Store files once they appear"
+                }
+            }
+        }
     },
     "lint-staged": {
         "*.ts": [
