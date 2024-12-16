@@ -2,6 +2,8 @@ import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
 import * as vscode from 'vscode';
 
+import { validateDSStoreFile } from './utils';
+
 const execPromise = promisify(exec);
 
 async function deleteDSStoreFiles() {
@@ -35,6 +37,11 @@ async function autoDeleteDSStoreFiles(uri: vscode.Uri) {
 
     if (autoDeleteEnabled) {
         try {
+            const isValid = await validateDSStoreFile(uri.fsPath);
+            if (!isValid) {
+                return;
+            }
+
             await execPromise(`rm "${uri.fsPath}"`);
             vscode.window.showInformationMessage(`Auto-deleted .DS_Store file, You're Welcome!`);
         } catch (error) {
