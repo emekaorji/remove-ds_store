@@ -32,6 +32,6 @@ The extension is deactivated automatically when you close Visual Studio Code or 
 
 ### Feedback and Contributions 👂
 
-If you have any feedback, suggestions, or bug reports, please create an issue or reach out to me on Twitter ([@code_rabbi](https://x.com/code_rabbi))
+If you have any feedback, suggestions, or bug reports, please create an issue or reach out to me on Twitter ([@thecoderabbi](https://x.com/thecoderabbi))
 
 Enjoy! 💙
